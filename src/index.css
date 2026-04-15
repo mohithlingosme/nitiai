@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-legal-950: #f8fafc;
+  --color-legal-900: #ffffff;
+  --color-legal-800: #f1f5f9;
+  --color-legal-700: #64748b;
+  --color-gold-500: #1e293b;
+  --color-gold-600: #0f172a;
+  --color-accent-600: #722f37;
+}
+
+@layer base {
+  body {
+    @apply bg-legal-950 text-slate-900 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight text-slate-900;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white border border-slate-200 rounded-xl shadow-sm;
+  }
+
+  .gold-gradient {
+    @apply text-gold-500;
+  }
+
+  .legal-card {
+    @apply bg-white border border-slate-200 rounded-xl p-6 hover:border-gold-500/30 hover:shadow-md transition-all duration-300;
+  }
+}
+
+.markdown-body {
+  @apply text-slate-700 leading-relaxed;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply text-slate-900 font-serif mt-6 mb-4;
+}
+
+.markdown-body p {
+  @apply mb-4;
+}
+
+.markdown-body ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.markdown-body code {
+  @apply font-mono bg-slate-100 px-1.5 py-0.5 rounded text-accent-600;
+}
